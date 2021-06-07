@@ -1,28 +1,40 @@
 <CircularAvatarImage>
 
-    # Red outer circle
     MDCard:
-        radius: [56, ]
-        size_hint: None, None
-        size: 56, 56
-        md_bg_color: 1, 0, 0, 1
+        orientation: 'vertical'
+        size_hint_x: None
+        height: 60
+        width: 80
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         elevation: 0
 
-    # Middle white circle
-    MDCard:
-        radius: [53, ]
-        size_hint: None, None
-        size: 53, 53
-        md_bg_color: 1, 1, 1, 1
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-        elevation: 0
+        # Red outer circle
+        MDCard:
+            radius: [56, ]
+            size_hint: None, None
+            size: 56, 56
+            md_bg_color: 1, 0, 0, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            elevation: 0
 
-    # Instagram user profile picture
-    FitImage:
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-        source: root.avatar
-        radius: [50,]
-        size_hint: None, None
-        size: 50, 50
+        # Middle white circle
+        MDCard:
+            radius: [53, ]
+            size_hint: None, None
+            size: 53, 53
+            md_bg_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            elevation: 0
 
+        # Instagram user profile picture
+        FitImage:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            source: root.avatar
+            radius: [50,]
+            size_hint: None, None
+            size: 50, 50
+
+        MDLabel:
+            text: root.name
+            pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+            font_size: 5
