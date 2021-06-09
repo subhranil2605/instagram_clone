@@ -1,0 +1,74 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+<PostCard>:
+    orientation: 'vertical'
+    size_hint_y: None
+    height: "420dp"
+    spacing: 2
+    elevation: 0
+
+    # upper part
+    MDBoxLayout:
+        padding: 2
+        adaptive_height: True
+
+        OneLineAvatarListItem:
+            text: root.username
+            divider: None
+            _no_ripple_effect: True
+
+            ImageLeftWidget:
+                source: root.avatar
+                radius: [20, ]
+
+        MDIconButton:
+            icon: "dots-vertical"
+
+    # Post
+    FitImage:
+        adaptive_height: True
+        source: root.post
+
+    # Reactions
+    MDBoxLayout:
+        padding: 2
+        spacing: 2
+        adaptive_height: True
+
+        MDIconButton:
+            icon: 'heart-outline'
+
+        MDIconButton:
+            icon: 'message-reply-outline'
+
+        MDIconButton:
+            icon: 'send-outline'
+
+        Widget:
+
+        MDIconButton:
+            icon: 'bookmark-outline'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: 5
+        spacing: 2
+        adaptive_height: True
+
+        MyLabel:
+            text: '211 likes'
+            bold: True
+
+        MyLabel:
+            markup: True
+            text: f'[b]{root.username}[/b] {root.caption}'
+
+        MyLabel:
+            text: 'View all 5 comments'
+            theme_text_color: 'Custom'
+            text_color: 0, 0, 0, 0.5
+
+
+<MyLabel@MDLabel>
+    adaptive_height: True
+    font_size: 12
