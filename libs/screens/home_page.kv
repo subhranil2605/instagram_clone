@@ -1,8 +1,7 @@
 #:import get_color_from_hex kivy.utils.get_color_from_hex
 
 <HomePage>
-    name: "home_page"
-    id: home_page
+    md_bg_color: get_color_from_hex("#FFFFFF")
 
     MDBoxLayout:
         orientation: 'vertical'
@@ -30,8 +29,8 @@
 
                             MDBoxLayout:
                                 adaptive_width: True
-                                spacing: 30
-                                padding: 10
+                                spacing: 5
+                                padding: 5
 
                                 MDRoundFlatIconButton:
                                     icon: 'android'
@@ -39,8 +38,8 @@
 
                                 MDBoxLayout:
                                     adaptive_width: True
-                                    padding: 10
-                                    spacing: 70
+                                    padding: 5
+                                    spacing: 5
                                     id: stories
 
                         MDSeparator:
