@@ -16,6 +16,7 @@ class InstagramApp(MDApp):
         Builder.load_file('libs/components/appbar.kv')
         Builder.load_file('libs/components/circular_avatar_image.kv')
         Builder.load_file('libs/components/postcard.kv')
+        Builder.load_file('libs/components/story_creator.kv')
 
     def on_start(self):
         self.root.dispatch('on_enter')

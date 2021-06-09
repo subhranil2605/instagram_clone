@@ -3,7 +3,10 @@ from kivymd.uix.screen import MDScreen
 from libs.components.circular_avatar_image import CircularAvatarImage
 from libs.components.postcard import PostCard
 
+
 class HomePage(MDScreen):
+    profile_picture = 'https://images.unsplash.com/photo-1623065691913-e9a650810efd?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+
     def on_enter(self):
         self.list_stories()
         self.list_post()
@@ -11,8 +14,8 @@ class HomePage(MDScreen):
     def list_stories(self):
         for i in range(10):
             self.ids.stories.add_widget(CircularAvatarImage(
-                avatar='https://images.unsplash.com/photo-1623065691913-e9a650810efd?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-                name="subhranil2605"
+                avatar=self.profile_picture,
+                name="subhranil26"
             ))
 
     def list_post(self):
