@@ -11,7 +11,7 @@
         adaptive_height: True
 
         OneLineAvatarListItem:
-            text: f'[size=14]{root.username}[/size]'
+            text: f'[b][size=14]{root.username}[/size][/b]'
             divider: None
             _no_ripple_effect: True
 
@@ -54,7 +54,7 @@
         adaptive_height: True
 
         MyLabel:
-            text: '211 likes'
+            text: f'{root.likes} likes'
             bold: True
 
         MyLabel:
@@ -62,7 +62,7 @@
             text: f'[b]{root.username}[/b] {root.caption}'
 
         HalfOpacityLabel:
-            text: 'View all 5 comments'
+            text: f'View all {root.comments} comments'
 
 
     MDBoxLayout:
@@ -71,7 +71,7 @@
         adaptive_height: True
 
         FitImage:
-            source: root.avatar
+            source: root.profile_pic
             size_hint: None, None
             size: 20, 20
             radius: [20, ]
@@ -86,7 +86,7 @@
 
         HalfOpacityLabel:
             font_size: 10
-            text: '9 hours ago'
+            text: f'{root.posted_ago} ago'
 
 
 <MyLabel@MDLabel>

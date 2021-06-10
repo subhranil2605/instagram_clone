@@ -27,8 +27,12 @@ class HomePage(MDScreen):
             data = json.load(f_obj)
             for username in data:
                 self.ids.timeline.add_widget(PostCard(
+                    profile_pic=self.profile_picture,
                     avatar=data[username]['avatar'],
                     username=username,
                     post=data[username]['post'],
-                    caption=data[username]['caption']
+                    caption=data[username]['caption'],
+                    likes=data[username]['likes'],
+                    comments=data[username]['comments'],
+                    posted_ago=data[username]['posted_ago']
                 ))
