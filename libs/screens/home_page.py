@@ -1,3 +1,5 @@
+import json
+
 from kivymd.uix.screen import MDScreen
 
 from libs.components.circular_avatar_image import CircularAvatarImage
@@ -12,17 +14,21 @@ class HomePage(MDScreen):
         self.list_post()
 
     def list_stories(self):
-        for i in range(10):
-            self.ids.stories.add_widget(CircularAvatarImage(
-                avatar=self.profile_picture,
-                name="subhranil26"
-            ))
+        with open('assets/data/stories.json') as f_obj:
+            data = json.load(f_obj)
+            for name in data:
+                self.ids.stories.add_widget(CircularAvatarImage(
+                    avatar=data[name]['avatar'],
+                    name=name
+                ))
 
     def list_post(self):
-        for i in range(10):
-            self.ids.timeline.add_widget(PostCard(
-                avatar='https://images.unsplash.com/photo-1623100802758-27f1c893f31f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80',
-                username='subhranil2605',
-                post='https://images.unsplash.com/photo-1623100802758-27f1c893f31f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80',
-                caption='Create Full Page Scroll Views'
-            ))
+        with open('assets/data/posts.json') as f_obj:
+            data = json.load(f_obj)
+            for username in data:
+                self.ids.timeline.add_widget(PostCard(
+                    avatar=data[username]['avatar'],
+                    username=username,
+                    post=data[username]['post'],
+                    caption=data[username]['caption']
+                ))
